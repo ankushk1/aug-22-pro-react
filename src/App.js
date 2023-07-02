@@ -1,23 +1,35 @@
-import logo from './logo.svg';
-import './App.css';
+import logo from "./logo.svg";
+import "./App.css";
+import Component1 from "./components/Component1";
+import Component2 from "./components/component2";
+import Component3 from "./components/Component3";
+import StateComp from "./components/StateComp";
+import StateNonPrimUpdate from "./components/StateNonPrimUpdate";
+import PropsComp from "./components/PropsComp";
 
 function App() {
+  const printMessage = (msg) => {
+    console.log(msg);
+  };
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      {/* <StateComp/> */}
+      {/* <StateNonPrimUpdate/> */}
+      {/* <PropsComp
+        name="user1"
+        age={10}
+        arr={[1, 2, 3]}
+        obj={{ city: "Delhi" }}
+        isActive={true}
+        printMessage={printMessage}
+      /> */}
+
+      <PropsComp children="abc">
+        {{
+          name: "user 1"
+        }}
+      </PropsComp>
     </div>
   );
 }
