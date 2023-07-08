@@ -1,12 +1,8 @@
 import React from "react";
+import Component2 from "./component2";
 
 function Component1() {
-  return (
-    <React.Fragment className="">
-      <div>This is component 1</div>
-      <div>This is second div for component 1</div>
-    </React.Fragment>
-  );
+  return <Component2  />;
 }
 
 export default Component1;
