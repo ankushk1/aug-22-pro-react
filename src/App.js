@@ -6,16 +6,19 @@ import Component3 from "./components/Component3";
 import StateComp from "./components/StateComp";
 import StateNonPrimUpdate from "./components/StateNonPrimUpdate";
 import PropsComp from "./components/PropsComp";
-import { createContext } from "react";
+import { createContext, useState } from "react";
 import UseEffectHook from "./components/UseEffectHook";
+import ApiComp from "./components/ApiComp";
 
 export const messageContext = createContext(null);
-messageContext.displayName = "Message"
+messageContext.displayName = "Message";
 
 function App() {
-  const printMessage = (msg) => {
-    console.log(msg);
-  };
+  // const printMessage = (msg) => {
+  //   console.log(msg);
+  // };
+
+  const [mount, setMount] = useState(true);
 
   return (
     <div className="App">
@@ -38,7 +41,10 @@ function App() {
       {/* <messageContext.Provider value="Message from App.js">
         <Component1  />
       </messageContext.Provider> */}
-      <UseEffectHook/>
+      {/* <button onClick={() => setMount(!mount)}>Mount/Unmount</button>
+      {mount && <UseEffectHook />} */}
+
+      <ApiComp/>
     </div>
   );
 }

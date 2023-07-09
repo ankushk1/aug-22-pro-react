@@ -9,7 +9,7 @@ root.render(<App />);
 
 
 // root.render(
-//   // <React.StrictMode>
+//   <React.StrictMode>
 //     <App />
-//   // </React.StrictMode>
+//   </React.StrictMode>
 // );
