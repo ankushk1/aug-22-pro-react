@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import {
   Card,
   CardBody,
@@ -7,36 +7,8 @@ import {
   CardText,
   Button
 } from "reactstrap";
-import ApiItems from "./ApiItems";
-const ApiComp = () => {
-  const [data, setData] = useState([]);
-  const [filter, setFilter] = useState("products");
-
-  // Adding a new filter in getData and also rendering with new button
-  const getData = (json) => {
-    switch (filter) {
-      case "products":
-        return json.products;
-      case "users":
-        return json.users;
-      case "todos":
-        return json.todos;
-      default:
-        return;
-    }
-  };
-
-  const fetchData = async () => {
-    const res = await fetch(`https://dummyjson.com/${filter}?limit=10`);
-    const json = await res.json();
-    setData(getData(json));
-  };
-
-  useEffect(() => {
-    fetchData();
-  }, [filter]);
-
-  const renderData = (elem) => {
+const ApiItems = ({ elem, filter }) => {
+  const renderData = () => {
     switch (filter) {
       case "products":
         return (
@@ -95,39 +67,7 @@ const ApiComp = () => {
     }
   };
 
-  return (
-    <div>
-      <div>
-        <Button
-          color="primary"
-          className="me-3 my-3"
-          size="lg"
-          onClick={() => setFilter("products")}
-        >
-          Products
-        </Button>
-        <Button
-          color="success"
-          size="lg"
-          className="me-3"
-          onClick={() => setFilter("users")}
-        >
-          Users
-        </Button>
-        <Button color="warning" size="lg" onClick={() => setFilter("todos")}>
-          Todos
-        </Button>
-      </div>
-      <div className="d-flex flex-wrap justify-content-around">
-        {data.map((elem, index) => (
-          <div key={index} className="my-4">
-            {/* {renderData(elem)} */}
-            <ApiItems elem={elem} filter={filter} />
-          </div>
-        ))}
-      </div>
-    </div>
-  );
+  return <div>{renderData()}</div>;
 };
 
-export default ApiComp;
+export default ApiItems;
