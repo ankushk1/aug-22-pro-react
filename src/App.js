@@ -9,6 +9,7 @@ import PropsComp from "./components/PropsComp";
 import { createContext, useState } from "react";
 import UseEffectHook from "./components/UseEffectHook";
 import ApiComp from "./components/ApiComp";
+import FormComp from "./components/FormComp";
 
 export const messageContext = createContext(null);
 messageContext.displayName = "Message";
@@ -44,7 +45,8 @@ function App() {
       {/* <button onClick={() => setMount(!mount)}>Mount/Unmount</button>
       {mount && <UseEffectHook />} */}
 
-      <ApiComp/>
+      {/* <ApiComp/> */}
+      <FormComp/>
     </div>
   );
 }
