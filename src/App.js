@@ -10,6 +10,9 @@ import { createContext, useState } from "react";
 import UseEffectHook from "./components/UseEffectHook";
 import ApiComp from "./components/ApiComp";
 import FormComp from "./components/FormComp";
+import Signin from "./components/Signin";
+import ApiComp2 from "./components/ApiComp2";
+import ApiComp3 from "./components/ApiComp3";
 
 export const messageContext = createContext(null);
 messageContext.displayName = "Message";
@@ -46,7 +49,11 @@ function App() {
       {mount && <UseEffectHook />} */}
 
       {/* <ApiComp/> */}
-      <FormComp/>
+      {/* <FormComp/> */}
+
+      {/* <Signin/> */}
+      {/* <ApiComp2/> */}
+      <ApiComp3/>
     </div>
   );
 }
