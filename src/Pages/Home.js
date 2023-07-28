@@ -10,13 +10,14 @@ const Home = () => {
     // Hit the api and get the response
 
     // if success
-    navigate("/about", {
-      state: {
-        message: "String from Home.js",
-        name: "ABC",
-        age: 30
-      }
-    });
+    // navigate("/about", {
+    //   state: {
+    //     message: "String from Home.js",
+    //     name: "ABC",
+    //     age: 30
+    //   }
+    // });
+    navigate("/about?name=user1&id=100")
 
     //if error
   };

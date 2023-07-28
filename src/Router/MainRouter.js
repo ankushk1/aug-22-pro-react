@@ -12,12 +12,15 @@ const MainRouter = () => {
         <Navbar />
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/about/:id" element={<About />} />
+          <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
         </Routes>
       </BrowserRouter>
     </div>
   );
 };
+
+
+// Private routes / Auth Routes
 
 export default MainRouter;
