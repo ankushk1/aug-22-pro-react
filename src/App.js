@@ -14,6 +14,7 @@ import Signin from "./components/Signin";
 import ApiComp2 from "./components/ApiComp2";
 import ApiComp3 from "./components/ApiComp3";
 import ReduxCounter from "./components/ReduxCounter";
+import TodoApp from "./components/TodoApp";
 
 export const messageContext = createContext(null);
 messageContext.displayName = "Message";
@@ -54,8 +55,9 @@ function App() {
 
       {/* <Signin/> */}
       {/* <ApiComp2/> */}
-      <ApiComp3/>
-      <ReduxCounter/>
+      {/* <ApiComp3/>
+      <ReduxCounter/> */}
+      <TodoApp/>
     </div>
   );
 }
